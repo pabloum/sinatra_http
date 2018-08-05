@@ -12,7 +12,7 @@ get '/' do
   #     <input type="submit" name="primero" value="Estoy haciendo una petición post">
   #   </form>
   # HTML
-  erb : index
+  erb :index
 end
 
 

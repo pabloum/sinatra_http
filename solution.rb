@@ -1,10 +1,26 @@
 require 'sinatra'
+# require 'datamapper'
 
-get '/' do
-    erb :pares
+
+class Counter
+  attr_reader :cont
+
+  def initialize
+    @cont = 0
+  end
+
+  def sum(product)
+    @cont += product.to_i
+  end
 end
 
-#
-# post '/nuevo' do
-#   "Hola #{params[:verbo]}"
-# end
+cuenta = Counter.new
+
+get '/' do
+    @contador = cuenta.cont
+    erb :suma_numeros
+end
+post '/runMethod' do
+    cuenta.sum(params[:count])
+    redirect '/'
+end

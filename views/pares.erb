@@ -1,0 +1,4 @@
+<h1>Hola</h1>
+<% 50.times do |i| %>
+  <p> <%= i+1 %> <%="Soy Impar!" if i.even? %> <%="Soy Par!" unless i.even? %> </p>
+<% end %>

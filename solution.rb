@@ -1,15 +1,13 @@
 require 'sinatra'
 # require 'datamapper'
+# before do
+#   headers "HTTP_AUTH" => "test"
+#   headers "Content-Type" => "text/html; charset=utf-8"
+# end
+
 
 get '/' do
-  erb :abuela_sorda
-end
-
-post '/' do
-  if params[:msn] == params[:msn].upcase
-    "Ahhh si, manzanas!"
-  else
-    "Habla más duro mijito"
-  end
-  # redirect '/'
+  header = "test"
+  header = headers["HTTP_USER-AGENT"]
+  "hola mundo -#{header}- maricón"
 end

@@ -1,26 +1,15 @@
 require 'sinatra'
 # require 'datamapper'
 
-
-class Counter
-  attr_reader :cont
-
-  def initialize
-    @cont = 0
-  end
-
-  def sum(product)
-    @cont += product.to_i
-  end
-end
-
-cuenta = Counter.new
-
 get '/' do
-    @contador = cuenta.cont
-    erb :suma_numeros
+  erb :abuela_sorda
 end
-post '/runMethod' do
-    cuenta.sum(params[:count])
-    redirect '/'
+
+post '/' do
+  if params[:msn] == params[:msn].upcase
+    "Ahhh si, manzanas!"
+  else
+    "Habla más duro mijito"
+  end
+  # redirect '/'
 end

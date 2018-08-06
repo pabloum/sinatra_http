@@ -7,5 +7,7 @@ require 'sinatra'
 
 
 get '/' do
-  "Si lo logramos!"
+  request.user_agent
+  header = request.env["HTTP_USER_AGENT"]
+  "#{header}"
 end

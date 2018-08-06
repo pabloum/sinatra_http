@@ -10,4 +10,5 @@ get '/' do
   header = "test"
   header = headers["HTTP_USER-AGENT"]
   "hola mundo -#{header}- maricón"
+  "Chrome"
 end
